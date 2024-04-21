@@ -1,0 +1,39 @@
+# Configuration for the server
+server:
+  port: 8082
+
+# Spring Boot application configuration
+spring:
+  # Name of the application
+  application:
+    name: "user-service"
+  # Active profiles for the application
+  profiles:
+    active: "dev"
+  # Configuration import from a config server (optional)
+  config:
+    import: "optional:configserver:http://localhost:8071/"
+  # DataSource configuration for connecting to MySQL
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/user_db
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+#  sql:
+#    init:
+#      mode: always 
+      # JPA (Java Persistence API) configuration for Hibernate
+    
+# Management endpoint configuration
+management:
+  endpoints:
+    web:
+      # Exposing all endpoints
+      exposure:
+        include: "*"

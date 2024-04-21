@@ -1,0 +1,36 @@
+# Configuration for the server
+server:
+  port: 8081
+
+# Spring Boot application configuration
+spring:
+  # Name of the application
+  application:
+    name: "book-service"
+  # Active profiles for the application
+  profiles:
+    active: "dev"
+  # Configuration import from a config server (optional)
+  config:
+    import: "optional:configserver:http://localhost:8071/"
+  # DataSource configuration for connecting to MySQL
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/book_db
+    username: root
+    password: root
+  # JPA (Java Persistence API) configuration for Hibernate
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    
+# Management endpoint configuration
+management:
+  endpoints:
+    web:
+      # Exposing all endpoints
+      exposure:
+        include: "*"
