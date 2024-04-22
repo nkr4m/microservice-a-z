@@ -1,6 +1,7 @@
 package com.nkr4m.user_service.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,10 +34,10 @@ public class UserBookController {
 	
 //	using feign client
 	@GetMapping("/fetch-userWbook")
-	public ResponseEntity<User> fetchUserWbooks(){
+	public ResponseEntity<Books> fetchUserWbooks(){
 		ResponseEntity<Books> book = bookFeignClient.fetchUserBooks(1);
-		System.out.println( "success " + book.getBody());
-		return null;
+		
+		return book;
 	}
 	
 	
