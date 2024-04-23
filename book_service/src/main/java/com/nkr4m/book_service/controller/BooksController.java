@@ -20,7 +20,8 @@ public class BooksController {
 	BooksService bookService;
 	
 	@GetMapping("fetch-book")
-	public ResponseEntity<Books> fetchSpecificBook(@RequestParam Integer id){
+	public ResponseEntity<Books> fetchSpecificBook(@RequestParam Integer id) throws Exception{
+//		throw new Exception("BBBB");
 		Books book = bookService.fetchSpecificBook(id);
 		return new ResponseEntity<Books>(book, HttpStatus.OK);
 	}

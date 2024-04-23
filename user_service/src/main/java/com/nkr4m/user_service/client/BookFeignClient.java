@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.nkr4m.user_service.entity.Books;
 
-@FeignClient("BOOK-SERVICE")
+@FeignClient(name="BOOK-SERVICE", fallback = BookFallback.class)
 @LoadBalancerClient
 public interface BookFeignClient {
 	  @GetMapping(value = "fetch-book",consumes = "application/json")
