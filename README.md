@@ -12,7 +12,7 @@ Microservice development stages, with demo examples
 | Feign Client | ![#00d1a0](https://via.placeholder.com/10/00b48a?text=+) user_service to access book_service [REST] |
 | Api Gateway(logging, security filters) | ![#00d1a0](https://via.placeholder.com/10/00b48a?text=+) gateway_server |
 | Ressiliancy(Ressiliancy4J) | ![#00d1a0](https://via.placeholder.com/10/00b48a?text=+) gateway_server |
-| Messaging queue |  |
+| Messaging queue | ![#00d1a0](https://via.placeholder.com/10/00b48a?text=+) message_consumer & user_service |
 | Dockerize |  |
 | K8s Orchestration |  |
 
