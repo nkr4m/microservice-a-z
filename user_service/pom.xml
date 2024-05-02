@@ -75,6 +75,11 @@
 	      <groupId>org.springframework.cloud</groupId>
 	      <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 	    </dependency>
+	    <!-- for rabbitmq related functions -->
+	    <dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-stream-binder-rabbit</artifactId>
+		</dependency>
 
 		
 	</dependencies>
